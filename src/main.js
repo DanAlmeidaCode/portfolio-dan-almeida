@@ -21,6 +21,10 @@ import './styles/components/skills.css';
 import './styles/components/experience.css';
 import './styles/components/cases.css';
 import './styles/components/retentionSimulator.css';
+import './styles/components/education.css';
+import './styles/components/contact.css';
+import './styles/components/footer.css';
+import './styles/components/toast.css';
 
 import { renderHeader } from './components/header/header.js';
 import { renderHero } from './components/hero/hero.js';
@@ -30,6 +34,9 @@ import { createSkillModal } from './components/skillModal/skillModal.js';
 import { renderExperienceAccordion } from './components/experienceAccordion/experienceAccordion.js';
 import { renderCaseCards } from './components/caseCards/caseCards.js';
 import { renderRetentionSimulator } from './components/retentionSimulator/retentionSimulator.js';
+import { renderEducation } from './components/education/education.js';
+import { renderContactCta } from './components/contactCta/contactCta.js';
+import { renderFooter } from './components/footer/footer.js';
 import { navigationItems } from './data/navigation.js';
 import { initScrollSpy } from './features/scrollSpy.js';
 import { initMobileMenu } from './features/mobileMenu.js';
@@ -37,6 +44,7 @@ import { initScrollProgress } from './features/scrollProgress.js';
 import { initPointerGlow } from './features/pointerGlow.js';
 import { initCountUp } from './features/countUp.js';
 import { initRevealOnScroll } from './features/revealOnScroll.js';
+import { initBackToTop } from './features/backToTop.js';
 import { requireElement } from './utils/dom.js';
 
 function initHeader() {
@@ -86,6 +94,24 @@ function initRetentionSimulator() {
   initRevealOnScroll(revealTargets);
 }
 
+function initEducation() {
+  const educationSection = requireElement('#education');
+  const { revealTargets } = renderEducation(educationSection);
+  initRevealOnScroll(revealTargets);
+}
+
+function initContactCta() {
+  const contactSection = requireElement('#contact');
+  const { revealTargets } = renderContactCta(contactSection);
+  initRevealOnScroll(revealTargets);
+}
+
+function initFooter() {
+  const footerRoot = requireElement('#footer-root');
+  renderFooter(footerRoot);
+  initBackToTop(document.body);
+}
+
 function initPortfolio() {
   initHeader();
   initHero();
@@ -94,6 +120,9 @@ function initPortfolio() {
   initExperienceAccordion();
   initCaseCards();
   initRetentionSimulator();
+  initEducation();
+  initContactCta();
+  initFooter();
 }
 
 document.addEventListener('DOMContentLoaded', initPortfolio);

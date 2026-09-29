@@ -45,6 +45,7 @@ export const profile = {
     // hero, em vez de inventar uma série temporal separada.
     caption: 'Baseado nas 4 métricas de carreira ao lado',
   },
+  footerNote: 'Portfolio construído com Vite e JavaScript puro.',
   coreSkills: [
     'Liderança',
     'Visão analítica',
