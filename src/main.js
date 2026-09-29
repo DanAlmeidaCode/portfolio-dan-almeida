@@ -20,6 +20,7 @@ import './styles/components/metricsBand.css';
 import './styles/components/skills.css';
 import './styles/components/experience.css';
 import './styles/components/cases.css';
+import './styles/components/retentionSimulator.css';
 
 import { renderHeader } from './components/header/header.js';
 import { renderHero } from './components/hero/hero.js';
@@ -28,6 +29,7 @@ import { renderSkillsGrid } from './components/skillsGrid/skillsGrid.js';
 import { createSkillModal } from './components/skillModal/skillModal.js';
 import { renderExperienceAccordion } from './components/experienceAccordion/experienceAccordion.js';
 import { renderCaseCards } from './components/caseCards/caseCards.js';
+import { renderRetentionSimulator } from './components/retentionSimulator/retentionSimulator.js';
 import { navigationItems } from './data/navigation.js';
 import { initScrollSpy } from './features/scrollSpy.js';
 import { initMobileMenu } from './features/mobileMenu.js';
@@ -78,6 +80,12 @@ function initCaseCards() {
   initRevealOnScroll(revealTargets);
 }
 
+function initRetentionSimulator() {
+  const simulatorSection = requireElement('#retention-simulator');
+  const { revealTargets } = renderRetentionSimulator(simulatorSection);
+  initRevealOnScroll(revealTargets);
+}
+
 function initPortfolio() {
   initHeader();
   initHero();
@@ -85,6 +93,7 @@ function initPortfolio() {
   initSkillsGrid();
   initExperienceAccordion();
   initCaseCards();
+  initRetentionSimulator();
 }
 
 document.addEventListener('DOMContentLoaded', initPortfolio);
