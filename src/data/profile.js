@@ -39,6 +39,12 @@ export const profile = {
     'Comunicação e Oratória',
     'Segurança da Informação — Módulos 00 ao 02',
   ],
+  performanceSummaryCard: {
+    title: 'Resumo de performance',
+    // Reaproveita os 4 valores aprovados em metrics.js para o sparkline do
+    // hero, em vez de inventar uma série temporal separada.
+    caption: 'Baseado nas 4 métricas de carreira ao lado',
+  },
   coreSkills: [
     'Liderança',
     'Visão analítica',

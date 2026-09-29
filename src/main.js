@@ -15,12 +15,15 @@ import './styles/base.css';
 import './styles/layout.css';
 import './styles/utilities.css';
 import './styles/components/header.css';
+import './styles/components/hero.css';
 
 import { renderHeader } from './components/header/header.js';
+import { renderHero } from './components/hero/hero.js';
 import { navigationItems } from './data/navigation.js';
 import { initScrollSpy } from './features/scrollSpy.js';
 import { initMobileMenu } from './features/mobileMenu.js';
 import { initScrollProgress } from './features/scrollProgress.js';
+import { initPointerGlow } from './features/pointerGlow.js';
 import { requireElement } from './utils/dom.js';
 
 function initHeader() {
@@ -33,8 +36,15 @@ function initHeader() {
   initScrollProgress(progressBar);
 }
 
+function initHero() {
+  const heroSection = requireElement('#hero');
+  const { heroElement } = renderHero(heroSection);
+  initPointerGlow(heroElement);
+}
+
 function initPortfolio() {
   initHeader();
+  initHero();
 }
 
 document.addEventListener('DOMContentLoaded', initPortfolio);
