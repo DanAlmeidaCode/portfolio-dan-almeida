@@ -1,13 +1,75 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio-dan-almeida</title>
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Danilo Almeida, Gerente de Pós-Vendas. Portfolio de Customer Success e Customer Experience B2B: métricas de carreira, cases e simulador de retenção."
+    />
+    <meta name="theme-color" content="#0b1020" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Danilo Almeida — Customer Success & CX B2B" />
+    <meta
+      property="og:description"
+      content="Gerente de Pós-Vendas com mais de 4 anos em Customer Success e Customer Experience B2B. Veja métricas, cases e um simulador de retenção."
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image" content="/images/dan.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Danilo Almeida — Customer Success & CX B2B" />
+    <meta
+      name="twitter:description"
+      content="Gerente de Pós-Vendas com mais de 4 anos em Customer Success e Customer Experience B2B."
+    />
+
+    <title>Danilo Almeida — Customer Success & CX B2B</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Danilo Almeida",
+        "jobTitle": "Gerente de Pós-Vendas",
+        "email": "mailto:danalmeida.consultor@gmail.com",
+        "url": "https://github.com/DanAlmeidaCode",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vitória da Conquista",
+          "addressRegion": "BA",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://linkedin.com/in/danalmeidacs",
+          "https://github.com/DanAlmeidaCode"
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div id="app"></div>
+    <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+    <div id="header-root"></div>
+
+    <main id="main-content">
+      <section id="hero" aria-label="Apresentação"></section>
+      <section id="metrics" aria-label="Métricas de carreira"></section>
+      <section id="skills" aria-label="Ferramentas e habilidades"></section>
+      <section id="experience" aria-label="Experiência profissional"></section>
+      <section id="cases" aria-label="Cases"></section>
+      <section id="retention-simulator" aria-label="Simulador de retenção"></section>
+      <section id="education" aria-label="Formação, certificações e recomendações"></section>
+      <section id="contact" aria-label="Contato"></section>
+    </main>
+
+    <footer id="footer-root"></footer>
+
+    <div id="toast-root" aria-live="polite" class="visually-hidden"></div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

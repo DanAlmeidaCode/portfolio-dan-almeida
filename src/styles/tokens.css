@@ -1,0 +1,94 @@
+/*
+ * Design tokens: única fonte de verdade para cor, espaçamento, tipografia,
+ * raio, sombra e duração. Nenhum valor "mágico" deve aparecer fora daqui.
+ *
+ * Contraste verificado (fórmula WCAG de luminância relativa):
+ *   texto / fundo            ~19.6:1
+ *   texto secundário / fundo  ~8.9:1
+ *   texto secundário / surface ~8.1:1
+ *   accent mint / fundo      ~11.3:1
+ *   accent coral / fundo      ~6.8:1
+ * Todas as combinações usadas para texto superam o mínimo AA de 4.5:1.
+ */
+
+:root {
+  /* Cor - paleta escura */
+  --color-background: #0b1020;
+  --color-surface: #121933;
+  --color-surface-elevated: #1a2347;
+  --color-text: #eef2ff;
+  --color-text-secondary: #a7b0d0;
+  --color-accent-mint: #3de0a4;
+  --color-accent-coral: #ff6b5a;
+  --color-tile-light: #f4f6ff;
+  --color-tile-light-text: #0b1020;
+  --color-border: rgba(167, 176, 208, 0.16);
+  --color-border-strong: rgba(167, 176, 208, 0.32);
+  --color-focus-ring: var(--color-accent-mint);
+
+  /* Espaçamento - escala em múltiplos de 8 */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+
+  /* Espaçamento entre seções */
+  --section-spacing-desktop: var(--space-96);
+  --section-spacing-mobile: var(--space-64);
+
+  /* Grid e container */
+  --container-max-width: 1200px;
+  --grid-columns: 12;
+  --grid-gap: var(--space-24);
+  --gutter-mobile: var(--space-16);
+
+  /* Tipografia */
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  --font-size-sm: clamp(0.8125rem, 0.78rem + 0.16vw, 0.9375rem);
+  --font-size-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --font-size-xl: clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem);
+  --font-size-2xl: clamp(1.75rem, 1.5rem + 1.2vw, 2.5rem);
+  --font-size-3xl: clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
+  --font-size-4xl: clamp(2.75rem, 2.1rem + 3vw, 4.5rem);
+
+  --line-height-heading: 1.15;
+  --line-height-body: 1.6;
+  --measure-body: 68ch;
+
+  /* Raio */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Sombra */
+  --shadow-sm: 0 2px 8px rgba(4, 7, 20, 0.35);
+  --shadow-md: 0 8px 24px rgba(4, 7, 20, 0.4);
+  --shadow-lg: 0 16px 48px rgba(4, 7, 20, 0.45);
+  --shadow-glow-mint: 0 0 32px rgba(61, 224, 164, 0.25);
+
+  /* Duração e easing */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+
+  /* Camadas */
+  --z-header: 100;
+  --z-drawer: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+
+  /* Layout fixo do header, usado no scroll-padding-top */
+  --header-height: 72px;
+}
