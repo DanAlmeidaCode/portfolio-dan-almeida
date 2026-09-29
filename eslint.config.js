@@ -19,6 +19,10 @@ export default [
         IntersectionObserver: 'readonly',
         MutationObserver: 'readonly',
         CustomEvent: 'readonly',
+        performance: 'readonly',
+        requestAnimationFrame: 'readonly',
+        HTMLElement: 'readonly',
+        HTMLDialogElement: 'readonly',
       },
     },
     rules: {

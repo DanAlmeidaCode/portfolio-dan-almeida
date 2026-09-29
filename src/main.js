@@ -16,14 +16,18 @@ import './styles/layout.css';
 import './styles/utilities.css';
 import './styles/components/header.css';
 import './styles/components/hero.css';
+import './styles/components/metricsBand.css';
 
 import { renderHeader } from './components/header/header.js';
 import { renderHero } from './components/hero/hero.js';
+import { renderMetricsBand } from './components/metricsBand/metricsBand.js';
 import { navigationItems } from './data/navigation.js';
 import { initScrollSpy } from './features/scrollSpy.js';
 import { initMobileMenu } from './features/mobileMenu.js';
 import { initScrollProgress } from './features/scrollProgress.js';
 import { initPointerGlow } from './features/pointerGlow.js';
+import { initCountUp } from './features/countUp.js';
+import { initRevealOnScroll } from './features/revealOnScroll.js';
 import { requireElement } from './utils/dom.js';
 
 function initHeader() {
@@ -42,9 +46,17 @@ function initHero() {
   initPointerGlow(heroElement);
 }
 
+function initMetricsBand() {
+  const metricsSection = requireElement('#metrics');
+  const { countUpTargets, revealTargets } = renderMetricsBand(metricsSection);
+  initCountUp(countUpTargets);
+  initRevealOnScroll(revealTargets);
+}
+
 function initPortfolio() {
   initHeader();
   initHero();
+  initMetricsBand();
 }
 
 document.addEventListener('DOMContentLoaded', initPortfolio);
