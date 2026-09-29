@@ -34,6 +34,16 @@ function buildPhoto() {
   });
 }
 
+function buildFactsList() {
+  const facts = Object.values(profile.narrativeFacts);
+
+  return createElement(
+    'ul',
+    { className: 'hero__facts' },
+    facts.map((fact) => createElement('li', { className: 'hero__fact text-mono' }, fact)),
+  );
+}
+
 function buildPerformanceCard() {
   const values = metrics.map((metric) => metric.value);
 
@@ -49,7 +59,14 @@ export function renderHero(container) {
     createElement('div', { className: 'hero__copy' }, [
       createElement('p', { className: 'section-eyebrow' }, profile.role),
       createElement('h1', { className: 'hero__name' }, profile.name),
+      createElement(
+        'p',
+        { className: 'hero__current-role text-secondary' },
+        `${profile.currentRole.title}, ${profile.currentRole.company}`,
+      ),
       createElement('p', { className: 'hero__value-proposition' }, profile.valueProposition),
+      createElement('p', { className: 'hero__summary text-secondary' }, profile.summary),
+      buildFactsList(),
       createElement('div', { className: 'hero__cta-group' }, [
         createElement('a', { href: '#metrics', className: 'button button--primary' }, 'Ver métricas'),
         createElement(
