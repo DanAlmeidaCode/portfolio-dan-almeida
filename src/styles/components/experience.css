@@ -1,0 +1,114 @@
+.experience-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.experience-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.experience-card__heading {
+  margin: 0;
+}
+
+.experience-card__trigger {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  padding: var(--space-24);
+  text-align: left;
+}
+
+.experience-card__trigger-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.experience-card__role {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.experience-card__hint {
+  font-size: var(--font-size-sm);
+}
+
+.experience-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.experience-card__period {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.experience-card__chevron {
+  transition: transform var(--duration-fast) var(--easing-standard);
+}
+
+.experience-card__trigger[aria-expanded='true'] .experience-card__chevron {
+  transform: rotate(180deg);
+}
+
+.experience-card__panel {
+  padding: 0 var(--space-24) var(--space-24);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-16);
+}
+
+.experience-card__panel h4 {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-mint);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: var(--space-16);
+  margin-bottom: var(--space-8);
+}
+
+.experience-card__panel h4:first-child {
+  margin-top: 0;
+}
+
+.experience-card__list li {
+  padding-left: var(--space-16);
+  position: relative;
+  margin-bottom: var(--space-8);
+}
+
+.experience-card__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent-mint);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-4) var(--space-16);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-sm);
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text-secondary);
+}
+
+.tag--current {
+  background-color: var(--color-accent-mint);
+  color: var(--color-background);
+  font-weight: 600;
+}

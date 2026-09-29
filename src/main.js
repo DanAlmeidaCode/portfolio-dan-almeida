@@ -18,12 +18,16 @@ import './styles/components/header.css';
 import './styles/components/hero.css';
 import './styles/components/metricsBand.css';
 import './styles/components/skills.css';
+import './styles/components/experience.css';
+import './styles/components/cases.css';
 
 import { renderHeader } from './components/header/header.js';
 import { renderHero } from './components/hero/hero.js';
 import { renderMetricsBand } from './components/metricsBand/metricsBand.js';
 import { renderSkillsGrid } from './components/skillsGrid/skillsGrid.js';
 import { createSkillModal } from './components/skillModal/skillModal.js';
+import { renderExperienceAccordion } from './components/experienceAccordion/experienceAccordion.js';
+import { renderCaseCards } from './components/caseCards/caseCards.js';
 import { navigationItems } from './data/navigation.js';
 import { initScrollSpy } from './features/scrollSpy.js';
 import { initMobileMenu } from './features/mobileMenu.js';
@@ -62,11 +66,25 @@ function initSkillsGrid() {
   renderSkillsGrid(skillsSection, { onOpenSkill: openSkillModal });
 }
 
+function initExperienceAccordion() {
+  const experienceSection = requireElement('#experience');
+  const { revealTargets } = renderExperienceAccordion(experienceSection);
+  initRevealOnScroll(revealTargets);
+}
+
+function initCaseCards() {
+  const casesSection = requireElement('#cases');
+  const { revealTargets } = renderCaseCards(casesSection);
+  initRevealOnScroll(revealTargets);
+}
+
 function initPortfolio() {
   initHeader();
   initHero();
   initMetricsBand();
   initSkillsGrid();
+  initExperienceAccordion();
+  initCaseCards();
 }
 
 document.addEventListener('DOMContentLoaded', initPortfolio);

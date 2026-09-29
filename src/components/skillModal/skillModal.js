@@ -20,7 +20,7 @@ function buildModalBody(skill, onNavigateToCase) {
       ? createElement(
           'a',
           {
-            href: '#cases',
+            href: `#case-${relatedCase.id}`,
             className: 'button button--secondary skill-modal__case-link',
             onClick: onNavigateToCase,
           },
