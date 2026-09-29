@@ -14,9 +14,27 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/layout.css';
 import './styles/utilities.css';
+import './styles/components/header.css';
+
+import { renderHeader } from './components/header/header.js';
+import { navigationItems } from './data/navigation.js';
+import { initScrollSpy } from './features/scrollSpy.js';
+import { initMobileMenu } from './features/mobileMenu.js';
+import { initScrollProgress } from './features/scrollProgress.js';
+import { requireElement } from './utils/dom.js';
+
+function initHeader() {
+  const headerRoot = requireElement('#header-root');
+  const { navLinks, menuToggle, drawer, progressBar } = renderHeader(headerRoot);
+
+  const sectionIds = navigationItems.map((item) => item.id);
+  initScrollSpy(navLinks, sectionIds);
+  initMobileMenu(menuToggle, drawer);
+  initScrollProgress(progressBar);
+}
 
 function initPortfolio() {
-  // Componentes serão adicionados aqui conforme forem implementados.
+  initHeader();
 }
 
 document.addEventListener('DOMContentLoaded', initPortfolio);
