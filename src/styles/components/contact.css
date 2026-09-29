@@ -29,8 +29,8 @@
 }
 
 .contact-card__value {
-  font-size: var(--font-size-lg);
-  word-break: break-word;
+  font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
 }
 
 .contact-card__hint {
