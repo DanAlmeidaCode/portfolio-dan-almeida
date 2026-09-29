@@ -17,10 +17,13 @@ import './styles/utilities.css';
 import './styles/components/header.css';
 import './styles/components/hero.css';
 import './styles/components/metricsBand.css';
+import './styles/components/skills.css';
 
 import { renderHeader } from './components/header/header.js';
 import { renderHero } from './components/hero/hero.js';
 import { renderMetricsBand } from './components/metricsBand/metricsBand.js';
+import { renderSkillsGrid } from './components/skillsGrid/skillsGrid.js';
+import { createSkillModal } from './components/skillModal/skillModal.js';
 import { navigationItems } from './data/navigation.js';
 import { initScrollSpy } from './features/scrollSpy.js';
 import { initMobileMenu } from './features/mobileMenu.js';
@@ -53,10 +56,17 @@ function initMetricsBand() {
   initRevealOnScroll(revealTargets);
 }
 
+function initSkillsGrid() {
+  const skillsSection = requireElement('#skills');
+  const { openSkillModal } = createSkillModal();
+  renderSkillsGrid(skillsSection, { onOpenSkill: openSkillModal });
+}
+
 function initPortfolio() {
   initHeader();
   initHero();
   initMetricsBand();
+  initSkillsGrid();
 }
 
 document.addEventListener('DOMContentLoaded', initPortfolio);

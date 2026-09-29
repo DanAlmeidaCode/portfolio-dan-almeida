@@ -1,0 +1,168 @@
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-bottom: var(--space-32);
+}
+
+.filter-chip {
+  padding: var(--space-8) var(--space-16);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  min-height: 44px;
+  transition:
+    background-color var(--duration-fast) var(--easing-standard),
+    color var(--duration-fast) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard);
+}
+
+.filter-chip:hover {
+  border-color: var(--color-accent-mint);
+  color: var(--color-text);
+}
+
+.filter-chip--active {
+  background-color: var(--color-accent-mint);
+  border-color: var(--color-accent-mint);
+  color: var(--color-background);
+}
+
+.skills__layout {
+  display: grid;
+  gap: var(--space-32);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-16);
+  align-content: start;
+}
+
+.skill-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  padding: var(--space-24) var(--space-16);
+  min-height: 120px;
+  background-color: var(--color-tile-light);
+  color: var(--color-tile-light-text);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--duration-fast) var(--easing-standard),
+    box-shadow var(--duration-fast) var(--easing-standard),
+    opacity var(--duration-base) var(--easing-standard),
+    scale var(--duration-base) var(--easing-standard);
+}
+
+.skill-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-tile--hidden {
+  opacity: 0;
+  scale: 0.85;
+  pointer-events: none;
+}
+
+.skill-tile__name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-align: center;
+}
+
+.skills__education {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  height: fit-content;
+}
+
+.skills__education-course {
+  font-weight: 600;
+  margin-top: var(--space-8);
+}
+
+.skills__education-link {
+  display: inline-block;
+  margin-top: var(--space-16);
+  color: var(--color-accent-mint);
+  font-size: var(--font-size-sm);
+  text-decoration: underline;
+}
+
+@media (min-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .skills__layout {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+/* Modal de skill (dialog nativo) */
+.skill-modal {
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text);
+  padding: var(--space-32);
+  width: min(480px, 90vw);
+  box-shadow: var(--shadow-lg);
+}
+
+.skill-modal::backdrop {
+  background-color: rgba(4, 7, 20, 0.72);
+}
+
+.skill-modal__close {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  width: 36px;
+  height: 36px;
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-sm);
+}
+
+.skill-modal__title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-8);
+}
+
+.skill-modal__category {
+  color: var(--color-accent-mint);
+  margin-bottom: var(--space-16);
+}
+
+.skill-modal__facts {
+  margin-bottom: var(--space-24);
+}
+
+.skill-modal__facts dt {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-16);
+}
+
+.skill-modal__facts dd {
+  margin: var(--space-4) 0 0;
+}
+
+.skill-modal__case-link {
+  width: 100%;
+}

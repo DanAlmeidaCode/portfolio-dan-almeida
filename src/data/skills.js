@@ -93,7 +93,9 @@ export const skills = [
     id: 'sql',
     name: 'SQL',
     category: 'Dados e Código',
-    iconSlug: null,
+    // SQL é uma linguagem, não uma marca: usa ícone neutro (banco de dados)
+    // em vez de um logotipo, conforme public/icons/sql.svg.
+    iconSlug: 'sql',
     level: 'TODO(dan)',
     usage:
       'Na SenseData, usei SQL para analisar dados de clientes como parte da rotina de Customer Experience, organizada em sprints via Jira.',
